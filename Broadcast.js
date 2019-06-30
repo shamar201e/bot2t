@@ -17,9 +17,7 @@ const Discord = require("discord.js");
                                                       message.delete();
             
                                                     });
-            
-                                                  });
-   kboosh.on("message", message => {
+               kboosh.on("message", message => {
        var prefix = "!";
  
              var args = message.content.substring(prefix.length).split(" ");
