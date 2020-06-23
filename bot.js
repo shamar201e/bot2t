@@ -245,7 +245,7 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 
 
 client.on('message', async msg => {
-if(msg.content.startsWith(prefix+'server')) {
+if(msg.content.startsWith(prefix +"server")) {
 let embed = new Discord.MessageEmbed()
 .setColor('BLACK')
 .setThumbnail(msg.guild.iconURL())
