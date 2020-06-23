@@ -244,4 +244,21 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 });
 
 
+client.on('message', async msg => {
+if(msg.content.startsWith(prefix  + 'server')) {
+let embed = new Discord.MessageEmbed()
+.setColor('BLACK')
+.setThumbnail(msg.guild.iconURL())
+.setTitle(` **${msg.guild.name}**`)
+.addField('ٍ➺ **Server Region**',`[** __${msg.guild.region}__ **]`,true)
+.addField('**Roles**',`[** __${msg.guild.roles.cache.size}__ **]`,true)
+.addField('**Members**',`[** __${msg.guild.memberCount}__ **]`,true)
+.addField(' **Text Channels**',`[** __${msg.guild.channels.cache.filter(m => m.type === 'text').size}__** ]`,true)
+.addField(' **Voice Channels**',`[** __${msg.guild.channels.cache.filter(m => m.type === 'voice').size}__ **]`,true)
+.addField(' **Owner Ship**',`**${msg.guild.owner}**`,true)
+.addField(' **Server ID**',`**${msg.guild.id}**`,true)
+.addField('**Date of creating**',`**${msg.guild.createdAt.toLocaleString()}**`,true)
+msg.channel.send(embed);
+}});
+
 client.login(process.env.BOT_TOKEN);
