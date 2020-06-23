@@ -173,7 +173,7 @@ client.on('message', async message => {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
-            message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name}.`);
+            message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name} `);
             const embed = new Discord.RichEmbed()
                 .setColor(d1631e)
                 .addField(`Hey ${message.author.username}!`, `:white_check_mark:  تم انشاء تذكرتك, #ticket`)
