@@ -79,15 +79,13 @@ client.on('ready',  () => {
    });
 
 //خط
+
+
 client.on('message', msg => {
-if (msg.author.bot) return;
-if (msg.content === "خط") {
-msg.delete(100);
-msg.channel.sendFile('https://media.discordapp.net/attachments/607161537517322240/725302733858668564/unknown.png?width=167&height=39');
-}
+  if (msg.content === 'خط') {
+    msg.reply('https://media.discordapp.net/attachments/721999476696547329/725306956067110912/508209739218419732.png?width=653&height=35');
+  }
 });
-
-
 // هكر حميه 
 
 var config = {
