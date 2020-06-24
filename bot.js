@@ -53,17 +53,7 @@ client.on('ready',  () => {
     console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
   });
 
-  client.on('message', message => {
-    if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('$adminbc')){
-if(!message.author.id === '476185102922285066') return;
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
+
 
   client.on('message', msg => {
     if(msg.content === '$help')
@@ -82,15 +72,20 @@ m.sendMessage(args)
 
        $bc  |  لأرسال برود كاست للأونلاين
 
-       $adminbc | برودكاست عادي
-
        ** `)
    message.author.sendEmbed(embed)
    
    }
    });
 
-
+//خط
+client.on('message', msg => {
+if (msg.author.bot) return;
+if (msg.content === "خط") {
+msg.delete(100);
+msg.channel.sendFile('رابط الصوره');
+}
+});
 
 
 // هكر حميه 
