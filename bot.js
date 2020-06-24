@@ -83,7 +83,7 @@ client.on('message', msg => {
 if (msg.author.bot) return;
 if (msg.content === "خط") {
 msg.delete(100);
-msg.channel.sendFile('رابط الصوره');
+msg.channel.sendFile('https://media.discordapp.net/attachments/607161537517322240/722867510831087636/35c63a83afacf0c3.jpg?width=1020&height=55');
 }
 });
 
