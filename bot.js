@@ -255,4 +255,29 @@ client.on('message', function(msg) {
 msg.channel.send(embed);
     }
 });
+
+
+
+
+
+ client.on("message", message => {
+  if (message.channel.type == "dm") {
+    
+    let embed = new Discord.RichEmbed()
+    .setTitle('New message !')
+    .addField(`> **Message BY** : **${message.author.tag}**`)
+    .addField(`> **ID** : **${message.author.id}**`)
+    .addField(`> **Message** : ${message.content}`)
+    .setFooter(`**${nameofbot} Alarm**`)
+    client.channels.get('721999476696547329').send(embed);
+   
+}});
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
