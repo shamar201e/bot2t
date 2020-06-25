@@ -264,7 +264,7 @@ msg.channel.send(embed);
   if (message.channel.type == "dm") {
     
     let embed = new Discord.RichEmbed()
-    .setTitle('New message !')
+    .setTitle('$ordar')
     .addField(`> **Message BY** : **${message.author.tag}**`)
     .addField(`> **ID** : **${message.author.id}**`)
     .addField(`> **Message** : ${message.content}`)
