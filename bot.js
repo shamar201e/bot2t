@@ -3,63 +3,20 @@ const client = new Discord.Client();
 var prefix = "$"
 var adminprefix = '$'
 
-
-//bc
-
-client.on("message", message => {
-    if (message.content.startsWith("$obc")) {
-                 if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' ');
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
-  m.send(`${argresult}\n ${m}`);
-  })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
-  message.delete();
-  };
-  });
-
-
-//bc online
-
-
-  var prefix = "$";
-
-  client.on("message", message => {
-  
-              if (message.content.startsWith(prefix + "bc")) {
-                           if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-    let args = message.content.split(" ").slice(1);
-    var argresult = args.join(' '); 
-    message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
-   m.send(`${argresult}\n ${m}`);
-  })
-   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  عدد المستلمين `); 
-   message.delete(); 
-  };     
-  });
-
-client.on('message', message => {
-    var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("$avatar")) {
-message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
+client.on('ready',async () => {//Toxic Codes
+console.log("Starting..");//Toxic Codes
+let g = client.guilds.get("721982566151880707"); // id server
+let c = g.channels.get("725632823314088020");// id channel
+if(c.type === 'voice') {//Toxic Codes
+c.join();//Toxic Codes
+setInterval(() => {//Toxic Codes
+if(!g.me.voiceChannel) c.join();
+}, 1);//Toxic Codes
+} else {//Toxic Codes
+console.log('Failed To Join: \n The Channel Type isn "Listening."')
 }
 });
 
-client.on('ready',  () => {
-    console.log('تم تشغيل :Broadcast  ');
-    console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
-    console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
-    console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
-  });
-
-
-
-  client.on('message', msg => {
-    if(msg.content === '$help')
-    msg.reply('Check Your DM :white_check_mark:')
-  });
-  
   
   client.on("message", message => {
     if (message.content === "$help") {
