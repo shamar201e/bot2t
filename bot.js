@@ -16,7 +16,7 @@ if(!g.me.voiceChannel) c.join();
 console.log('Failed To Join: \n The Channel Type isn "Listening."')
 }
 });
-
+ 
   
   client.on("message", message => {
     if (message.content === "$help") {
