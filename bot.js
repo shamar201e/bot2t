@@ -3,19 +3,6 @@ const client = new Discord.Client();
 var prefix = "$"
 var adminprefix = '$'
 
-client.on('ready',async () => {//Toxic Codes
-console.log("Starting..");//Toxic Codes
-let g = client.guilds.get("721982566151880707"); // id server
-let c = g.channels.get("725632823314088020");// id channel
-if(c.type === 'voice') {//Toxic Codes
-c.join();//Toxic Codes
-setInterval(() => {//Toxic Codes
-if(!g.me.voiceChannel) c.join();
-}, 1);//Toxic Codes
-} else {//Toxic Codes
-console.log('Failed To Join: \n The Channel Type isn "Listening."')
-}
-});
  
 
 //خط
