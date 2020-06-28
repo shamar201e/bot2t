@@ -17,23 +17,6 @@ console.log('Failed To Join: \n The Channel Type isn "Listening."')
 }
 });
  
-  
-  client.on("message", message => {
-    if (message.content === "$help") {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#00FF00")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`**Help|هيلب
-
-       $obc | لأرسال برود كاست للكل
-
-       $bc  |  لأرسال برود كاست للأونلاين
-
-       ** `)
-   message.author.sendEmbed(embed)
-   
-   }
-   });
 
 //خط
 
